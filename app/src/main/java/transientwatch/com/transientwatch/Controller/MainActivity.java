@@ -142,7 +142,12 @@ public class MainActivity extends ActionBarActivity
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
             transientItemListView = (ListView) rootView.findViewById(R.id.transient_item_list);
-
+            transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    System.out.println("Clicked");
+                }
+            });
             new Thread(new Runnable() {
                 @Override
                 public void run() {
