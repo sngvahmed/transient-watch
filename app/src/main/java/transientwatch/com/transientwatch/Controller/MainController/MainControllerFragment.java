@@ -52,6 +52,7 @@ public class MainControllerFragment extends Fragment {
                         }
                     });
                     Intent intent = new Intent(getActivity() , DetailsActivity.class);
+                    intent.putExtra("TransientItem" , transientData.get(position));
                     startActivity(intent);
                 }
             });

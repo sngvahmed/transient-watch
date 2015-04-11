@@ -1,6 +1,8 @@
 package transientwatch.com.transientwatch.Model;
 
-public class Transient {
+import java.io.Serializable;
+
+public class Transient implements Serializable {
 		
 	private String name;
     private String type;

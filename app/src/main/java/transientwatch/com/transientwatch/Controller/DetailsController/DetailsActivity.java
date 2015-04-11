@@ -5,15 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
 
 
 public class DetailsActivity extends ActionBarActivity {
+    Transient trans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        trans = (Transient) getIntent().getSerializableExtra("TransientItem");
     }
 
 
