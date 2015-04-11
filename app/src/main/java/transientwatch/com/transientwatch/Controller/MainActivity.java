@@ -128,6 +128,7 @@ public class MainActivity extends ActionBarActivity
             transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    
                     Toast.makeText(getActivity() , "item select " + Integer.toString(position) , Toast.LENGTH_LONG ).show();
                 }
             });

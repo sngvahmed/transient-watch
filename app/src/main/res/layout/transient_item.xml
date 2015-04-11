@@ -63,7 +63,10 @@
                 android:text="Follow"
                 android:textAlignment="gravity"
                 android:textColor="#ffffff"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
         </LinearLayout>
         </LinearLayout>
 </LinearLayout>
