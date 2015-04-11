@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="false">
+    android:focusable="false"
+    android:background="@drawable/background7"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp">
-
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="match_parent"
@@ -21,6 +24,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_name"
                     android:id="@+id/transient_name"
+                    android:textColor="#FFFFFF"
                     />
 
                 <TextView
@@ -29,6 +33,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_ra"
                     android:id="@+id/transient_ra"
+                    android:textColor="#FFFFFF"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -36,6 +41,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_dec"
                     android:id="@+id/transient_dec"
+                    android:textColor="#FFFFFF"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -43,6 +49,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_op"
                     android:id="@+id/transient_op"
+                    android:textColor="#FFFFFF"
                     />
         </LinearLayout>
 
