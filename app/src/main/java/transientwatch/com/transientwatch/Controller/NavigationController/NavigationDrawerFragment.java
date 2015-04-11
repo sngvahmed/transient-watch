@@ -22,6 +22,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import transientwatch.com.transientwatch.Controller.CategoryController.CategoryActivity;
+import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.R;
 
 /**
@@ -195,16 +197,16 @@ public class NavigationDrawerFragment extends Fragment {
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
             if(mCurrentSelectedPosition == 0){ // search select
-//                Intent intent = new Intent(getActivity() , SearchActivity.class);
-//                getActivity().startActivity(intent);
+                Intent intent = new Intent(getActivity() , SearchActivity.class);
+                getActivity().startActivity(intent);
             }else if (mCurrentSelectedPosition == 1) //home
             {
 
             }else if(mCurrentSelectedPosition == 2) // category
             {
-
+                Intent intent = new Intent(getActivity() , CategoryActivity.class);
+                getActivity().startActivity(intent);
             }
-
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
