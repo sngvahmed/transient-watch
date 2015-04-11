@@ -8,10 +8,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search">Search</string>
     <string name="hello_world">Hello world!</string>
     <string name="hello_search">Hello Search</string>
     <string name="hello_category">Hello category</string>
-    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_category">Category</string>
+    <string name="transient_name">transient name</string>
+    <string name="transient_ra">transient ra</string>
+    <string name="transient_dec">transient dec</string>
+    <string name="transient_op">transient op</string>
 
 </resources>
