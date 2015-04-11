@@ -12,22 +12,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
+import transientwatch.com.transientwatch.Model.TransientItem;
 import transientwatch.com.transientwatch.R;
+import transientwatch.com.transientwatch.Service.TransientAdapter;
+import transientwatch.com.transientwatch.Service.TransientDataFetcher;
 
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private CharSequence mTitle;
 
     @Override
@@ -43,6 +43,7 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.main_layout));
+
     }
 
     @Override
@@ -107,6 +108,10 @@ public class MainActivity extends ActionBarActivity
     public static class PlaceholderFragment extends Fragment {
         private static final String ARG_SECTION_NUMBER = "Main";
 
+        private ListView transientItemListView;
+        private TransientAdapter transientAdapter;
+        private List<TransientItem> transientItemData;
+
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -122,6 +127,13 @@ public class MainActivity extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            transientItemData = TransientDataFetcher.getData();
+            transientItemListView = (ListView) rootView.findViewById(R.id.transient_item_list);
+            transientAdapter = new TransientAdapter(getActivity() , transientItemData);
+
+            if(transientItemListView != null)
+                transientItemListView.setAdapter(transientAdapter);
             return rootView;
         }
 
