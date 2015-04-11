@@ -65,7 +65,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = getString(R.string.Nav_Category);
                 break;
             case 3:
-                mTitle = getString(R.string.Nav_feature);
+                mTitle = getString(R.string.Nav_Search);
                 break;
         }
     }
