@@ -22,7 +22,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.R;
 
 /**
@@ -196,8 +195,8 @@ public class NavigationDrawerFragment extends Fragment {
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
             if(mCurrentSelectedPosition == 0){ // search select
-                Intent intent = new Intent(getActivity() , SearchActivity.class);
-                getActivity().startActivity(intent);
+//                Intent intent = new Intent(getActivity() , SearchActivity.class);
+//                getActivity().startActivity(intent);
             }else if (mCurrentSelectedPosition == 1) //home
             {
 
