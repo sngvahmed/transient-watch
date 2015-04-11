@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">"TransientWatch "</string>
+    <string name="app_name">"Transient Watch "</string>
 
     <string name="Nav_Home">Home</string>
     <string name="Nav_Category">Category</string>
@@ -9,8 +9,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_search">SearchActivity</string>
-
     <string name="hello_world">Hello world!</string>
+    <string name="hello_search">Hello Search</string>
+    <string name="hello_category">Hello category</string>
     <string name="title_activity_category">CategoryActivity</string>
 
 </resources>

@@ -201,7 +201,8 @@ public class NavigationDrawerFragment extends Fragment {
                 getActivity().startActivity(intent);
             }else if (mCurrentSelectedPosition == 1) //home
             {
-
+                Intent intent = new Intent(getActivity() , SearchActivity.class);
+                getActivity().startActivity(intent);
             }else if(mCurrentSelectedPosition == 2) // category
             {
                 Intent intent = new Intent(getActivity() , CategoryActivity.class);
