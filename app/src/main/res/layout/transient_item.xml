@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:paddingTop="5dp">
+        android:layout_height="120dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:gravity="left"
+            android:paddingLeft="10dp"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <TextView
-                    android:paddingLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -26,7 +24,6 @@
                     />
 
                 <TextView
-                    android:paddingLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -34,7 +31,6 @@
                     android:id="@+id/transient_ra"
                     />
                 <TextView
-                    android:paddingLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -42,33 +38,32 @@
                     android:id="@+id/transient_dec"
                     />
                 <TextView
-                    android:paddingLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_op"
                     android:id="@+id/transient_op"
                     />
-            </LinearLayout>
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:padding="25dp"
             android:orientation="horizontal" >
 
             <Button
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:background="@drawable/follow_buttom"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/CloudImage"
+                android:id="@+id/follow"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
                 android:text="Follow"
-                />
+                android:textAlignment="gravity"
+                android:textColor="#ffffff"
+                android:textStyle="normal" />
         </LinearLayout>
         </LinearLayout>
 </LinearLayout>

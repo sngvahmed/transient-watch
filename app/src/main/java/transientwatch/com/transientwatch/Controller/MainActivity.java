@@ -1,6 +1,7 @@
 package transientwatch.com.transientwatch.Controller;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -121,6 +124,15 @@ public class MainActivity extends ActionBarActivity
             return fragment;
         }
 
+        public void onClickListnerInit(){
+            transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(getActivity() , "item select " + Integer.toString(position) , Toast.LENGTH_LONG ).show();
+                }
+            });
+        }
+
         public PlaceholderFragment() {
         }
 
@@ -155,6 +167,8 @@ public class MainActivity extends ActionBarActivity
                     }
                 }
             }).start();
+
+            onClickListnerInit();
 
             return rootView;
         }
