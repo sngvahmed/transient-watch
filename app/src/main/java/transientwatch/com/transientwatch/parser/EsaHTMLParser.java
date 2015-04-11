@@ -54,7 +54,8 @@ public class EsaHTMLParser implements Parser {
 			/**
 			 * Transient attributes
 			 */
-			obj.setName(attributes.get(0).text() + " " + transient_type);
+			obj.setName(attributes.get(0).text());
+            obj.setType(transient_type);
 			System.out.println(obj.getName());
 			obj.setRight_ascention(attributes.get(1).text());
 			obj.setDeclination(attributes.get(2).text());

@@ -3,7 +3,8 @@ package transientwatch.com.transientwatch.Model;
 public class Transient {
 		
 	private String name;
-	private String right_ascention;
+    private String type;
+    private String right_ascention;
 	private String declination;
 	private String orbital_period;
 	private String MAXI_prob_change;
@@ -97,7 +98,14 @@ public class Transient {
 	public void setFERMI_GBM_data(String fERMI_GBM_data) {
 		FERMI_GBM_data = fERMI_GBM_data;
 	}
-	
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
 	
 }
