@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import transientwatch.com.transientwatch.Model.TransientItem;
+import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
 
 /**
@@ -20,10 +20,10 @@ public class TransientAdapter extends BaseAdapter {
 
     private Activity activity;
     private LayoutInflater inflater;
-    private List<TransientItem> transientItems;
+    private List<Transient> aTransients;
 
-    public TransientAdapter(Activity activity , List<TransientItem> cloudItem){
-        transientItems = cloudItem;
+    public TransientAdapter(Activity activity , List<Transient> transientList){
+        aTransients = transientList;
         this.activity = activity;
     }
 
@@ -31,12 +31,12 @@ public class TransientAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return transientItems.size();
+        return aTransients.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return transientItems.get(position);
+        return aTransients.get(position);
     }
 
     @Override
@@ -56,11 +56,11 @@ public class TransientAdapter extends BaseAdapter {
         TextView dec = (TextView) convertView.findViewById(R.id.transient_dec);
         TextView op = (TextView) convertView.findViewById(R.id.transient_op);
 
-        TransientItem transientItem = transientItems.get(position);
-        name.setText(transientItem.getName());
-        ra.setText(transientItem.getRa());
-        dec.setText(transientItem.getDec());
-        op.setText(transientItem.getOp());
+        Transient aTransient = aTransients.get(position);
+        name.setText(aTransient.getName());
+        ra.setText(aTransient.getRight_ascention());
+        dec.setText(aTransient.getDeclination());
+        op.setText(aTransient.getOrbital_period());
 
         return convertView;
     }

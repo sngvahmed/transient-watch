@@ -13,12 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
-import transientwatch.com.transientwatch.Model.TransientItem;
+import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
 import transientwatch.com.transientwatch.Service.TransientAdapter;
 import transientwatch.com.transientwatch.Service.TransientDataFetcher;
@@ -110,7 +111,7 @@ public class MainActivity extends ActionBarActivity
 
         private ListView transientItemListView;
         private TransientAdapter transientAdapter;
-        private List<TransientItem> transientItemData;
+        private List<Transient> transientData;
 
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -128,12 +129,33 @@ public class MainActivity extends ActionBarActivity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            transientItemData = TransientDataFetcher.getData();
             transientItemListView = (ListView) rootView.findViewById(R.id.transient_item_list);
-            transientAdapter = new TransientAdapter(getActivity() , transientItemData);
 
-            if(transientItemListView != null)
-                transientItemListView.setAdapter(transientAdapter);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        transientData = TransientDataFetcher.getData();
+
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(transientItemListView != null) {
+                                    transientAdapter = new TransientAdapter(getActivity() , transientData);
+                                    transientItemListView.setAdapter(transientAdapter);
+                                }
+
+                            }
+                        });
+                        System.out.println("Finished loading " + transientItemListView == null);
+
+                    } catch (Exception e) {
+                        System.out.println("Exception " + e.toString());
+                        //e.printStackTrace();
+                    }
+                }
+            }).start();
+
             return rootView;
         }
 

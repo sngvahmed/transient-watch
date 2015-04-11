@@ -1,24 +1,20 @@
 package transientwatch.com.transientwatch.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import transientwatch.com.transientwatch.Model.TransientItem;
+import transientwatch.com.transientwatch.Model.Transient;
+import transientwatch.com.transientwatch.parser.EsaHTMLParser;
+import transientwatch.com.transientwatch.parser.Parser;
 
 /**
  * Created by sngv on 11/04/15.
  */
 public class TransientDataFetcher {
-    public static List<TransientItem> getData(){
-        ArrayList<TransientItem> items = new ArrayList<TransientItem>();
-        for(int i = 0 ;i < 10 ; i++){
-            TransientItem tmp = new TransientItem();
-            tmp.setDec("item " + Integer.toString(i));
-            tmp.setName("item " + Integer.toString(i));
-            tmp.setOp("item " + Integer.toString(i));
-            tmp.setRa("item " + Integer.toString(i));
-            items.add(tmp);
-        }
-        return items;
+    private static Parser parser = new EsaHTMLParser();
+
+    public static List<Transient> getData() throws Exception{
+        return parser.getData();
     }
 }
