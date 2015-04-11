@@ -1,7 +1,7 @@
 package transientwatch.com.transientwatch.Controller;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -16,9 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
@@ -128,8 +126,14 @@ public class MainActivity extends ActionBarActivity
             transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    
-                    Toast.makeText(getActivity() , "item select " + Integer.toString(position) , Toast.LENGTH_LONG ).show();
+                    Button follow = (Button) view.findViewById(R.id.follow);
+                    follow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity() , DetailsActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
             });
         }

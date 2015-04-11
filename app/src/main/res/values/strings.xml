@@ -17,5 +17,6 @@
     <string name="transient_ra">transient ra</string>
     <string name="transient_dec">transient dec</string>
     <string name="transient_op">transient op</string>
+    <string name="title_activity_details">DetailsActivity</string>
 
 </resources>

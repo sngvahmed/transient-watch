@@ -2,10 +2,12 @@ package transientwatch.com.transientwatch.Service;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -55,6 +57,7 @@ public class TransientAdapter extends BaseAdapter {
         TextView ra = (TextView) convertView.findViewById(R.id.transient_ra);
         TextView dec = (TextView) convertView.findViewById(R.id.transient_dec);
         TextView op = (TextView) convertView.findViewById(R.id.transient_op);
+        Button follow = (Button) convertView.findViewById(R.id.follow);
 
         Transient aTransient = aTransients.get(position);
         name.setText(aTransient.getName());
