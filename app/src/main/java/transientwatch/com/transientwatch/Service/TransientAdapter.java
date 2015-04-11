@@ -55,7 +55,7 @@ public class TransientAdapter extends BaseAdapter {
         TextView ra = (TextView) convertView.findViewById(R.id.transient_ra);
         TextView dec = (TextView) convertView.findViewById(R.id.transient_dec);
         TextView op = (TextView) convertView.findViewById(R.id.transient_op);
-
+//        TextView
         TransientItem transientItem = transientItems.get(position);
         name.setText(transientItem.getName());
         ra.setText(transientItem.getRa());
