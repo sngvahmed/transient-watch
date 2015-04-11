@@ -1,5 +1,6 @@
-package transientwatch.com.transientwatch;
+package transientwatch.com.transientwatch.Controller.NavigationController;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -20,7 +21,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
+import transientwatch.com.transientwatch.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -192,6 +195,17 @@ public class NavigationDrawerFragment extends Fragment {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
+            if(mCurrentSelectedPosition == 0){ // search select
+                Intent intent = new Intent(getActivity() , SearchActivity.class);
+                getActivity().startActivity(intent);
+            }else if (mCurrentSelectedPosition == 1) //home
+            {
+
+            }else if(mCurrentSelectedPosition == 2) // category
+            {
+
+            }
+
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
