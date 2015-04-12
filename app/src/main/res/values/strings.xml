@@ -20,5 +20,8 @@
     <string name="transient_op">transient op</string>
     <string name="title_activity_details">DetailsActivity</string>
     <string name="title_activity_favorite">FavoriteActivity</string>
-
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="op">The orbital period is the time taken for a given object to make one complete orbit around another object. When mentioned without further qualification in astronomy this refers to the sidereal period of an astronomical object which is calculated with respect to the stars There are several kinds of orbital periods for objects around the Sun (or other celestial objects)</string>
+    <string name="dc">For other uses see Declination (disambiguation).In astronomy, declination (abbreviated dec; symbol δ) is one of the two angles that locate a point on the celestial sphere in the equatorial coordinate system, the other being hour angle. Declination angle is measured northor south of the celestial equator, along the hour circle passing through the point in question</string>
+    <string name="ra">Right ascension (abbreviated RA; symbol α) is the angular distance measured eastward along the celestial equator from the vernal equinox to the hour circle of the point in question.[1] When combined with declination, these astronomicalcoordinates specify the direction of a point on the celestial sphere in the equatorial coordinate system.</string>
 </resources>

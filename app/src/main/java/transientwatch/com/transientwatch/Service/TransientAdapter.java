@@ -89,9 +89,7 @@ public class TransientAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 final Transient selectedItem = TransientDataFetcher.getData().get(myPosition);
-
                 System.out.println("Item Clicked");
-
                 if (selectedItem.isFollowed()) {
                     selectedItem.setFollowed(false);
                     ((Button) v).setText("Follow");
@@ -137,10 +135,8 @@ public class TransientAdapter extends BaseAdapter {
                                     PendingIntent i=PendingIntent.getActivity(v.getContext(), 0,
                                             new Intent(v.getContext(), DetailsActivity.class).putExtra("TransientItem" , newDataItem),
                                             0);
-
                                     note.setLatestEventInfo(v.getContext(), selectedItem.getName() + "told you :D ",
                                             newsItem.getChangedAttributeName() + "change by " + newsItem.getNewValue(), i);
-
                                     mgr.notify(NOTIFY_ME_ID, note);
 
                                 }
