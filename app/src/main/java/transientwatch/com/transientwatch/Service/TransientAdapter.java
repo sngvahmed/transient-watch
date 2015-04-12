@@ -62,6 +62,20 @@ public class TransientAdapter extends BaseAdapter {
 
         final int myPosition = position;
 
+        Transient aTransient = aTransients.get(position);
+        name.setText(aTransient.getName());
+        ra.setText(aTransient.getRight_ascention());
+        dec.setText(aTransient.getDeclination());
+        op.setText(aTransient.getOrbital_period());
+
+        if(aTransient.isFollowed()){
+            follow.setText("Unfollow");
+        }
+        else {
+            follow.setText("Follow");
+        }
+
+
         follow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,16 +114,6 @@ public class TransientAdapter extends BaseAdapter {
                 }
             }
         });
-
-        Transient aTransient = aTransients.get(position);
-        name.setText(aTransient.getName());
-        ra.setText(aTransient.getRight_ascention());
-        dec.setText(aTransient.getDeclination());
-        op.setText(aTransient.getOrbital_period());
-
-        if(aTransient.isFollowed()){
-            follow.setText("Unfollow");
-        }
 
         return convertView;
     }

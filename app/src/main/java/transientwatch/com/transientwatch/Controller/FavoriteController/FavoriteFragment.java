@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Model.NewsItem;
@@ -65,21 +66,35 @@ public class FavoriteFragment extends Fragment {
                 for(int i=0; i<oldData.size(); i++){
                     Transient oldDataItem = oldData.get(i);
 
-                    for(int j=0; j<newData.size(); j++){
-                        Transient newDataItem = newData.get(j);
+                    //for(int j=0; j<newData.size(); j++){
+                        Transient newDataItem = newData.get(i);
                         if(oldDataItem.getName().equals(newDataItem.getName())){
-                            for(Field field : newDataItem.getClass().getDeclaredFields()){
-                                if(!field.get(oldDataItem).equals(field.get(newDataItem)) && !field.getName().equals("followed")){
-                                    NewsItem newsItem = new NewsItem();
-                                    newsItem.setName(newDataItem.getName());
-                                    newsItem.setChangedAttributeName(field.getName().toUpperCase());
-                                    newsItem.setNewValue(field.get(newDataItem).toString());
-                                    TransientDataFetcher.getNews().add(newsItem);
-                                    newsAdapter.notifyDataSetChanged();
+                            try{
+                                for(Method method : newDataItem.getClass().getDeclaredMethods()){
+                                    if(method.getName().startsWith("get")) {
+                                        Object value = method.invoke(newDataItem);
+                                        String valueStr = value == null ? "" : value.toString();
+
+                                        if (value != null && valueStr.length() > 0 && !valueStr.equals("NO DATA") && !method.getName().equals("getFollowed")) {
+                                            method.setAccessible(true);
+
+                                            NewsItem newsItem = new NewsItem();
+                                            newsItem.setName(newDataItem.getName().replace("get", ""));
+                                            newsItem.setChangedAttributeName(method.getName().toUpperCase());
+                                            newsItem.setNewValue(value != null ? value.toString() : "");
+                                            TransientDataFetcher.getNews().add(newsItem);
+
+                                            newsAdapter.notifyDataSetChanged();
+                                        }
+                                    }
                                 }
                             }
+                            catch (Exception ex){
+                                ex.printStackTrace();
+                            }
+
                         }
-                    }
+                    //}
                 }
 
 
