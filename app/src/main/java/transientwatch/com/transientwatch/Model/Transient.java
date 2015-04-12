@@ -1,5 +1,7 @@
 package transientwatch.com.transientwatch.Model;
 
+import android.app.ListActivity;
+
 import java.io.Serializable;
 
 public class Transient implements Serializable {

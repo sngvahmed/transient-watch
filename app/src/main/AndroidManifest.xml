@@ -33,16 +33,9 @@
             android:label="@string/title_activity_details" >
         </activity>
         <activity
-            android:name=".Controller.Favorite.FavoriteActivity"
-            android:label="@string/title_activity_favorite" >
-        </activity>
-        <activity
             android:name=".Controller.FavoriteController.FavoriteActivity"
-            android:label="@string/title_activity_favorite" >
-        </activity>
-        <activity
-            android:name=".FavoriteActivity"
-            android:label="@string/title_activity_favorite" >
+            android:label="@string/title_activity_favorite"
+            android:parentActivityName=".Controller.MainController.MainActivity">
         </activity>
     </application>
 
