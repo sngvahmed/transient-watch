@@ -24,6 +24,7 @@ import android.widget.ListView;
 
 import transientwatch.com.transientwatch.Controller.CategoryController.CategoryActivity;
 import transientwatch.com.transientwatch.Controller.FavoriteController.FavoriteActivity;
+import transientwatch.com.transientwatch.Controller.MainController.MainActivity;
 import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.R;
 
@@ -203,7 +204,7 @@ public class NavigationDrawerFragment extends Fragment {
                 getActivity().startActivity(intent);
             }else if (mCurrentSelectedPosition == 1) //home
             {
-                Intent intent = new Intent(getActivity() , SearchActivity.class);
+                Intent intent = new Intent(getActivity() , MainActivity.class);
                 getActivity().startActivity(intent);
             }else if(mCurrentSelectedPosition == 2) // Favorite
             {

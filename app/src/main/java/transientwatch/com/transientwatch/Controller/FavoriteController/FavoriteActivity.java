@@ -38,7 +38,7 @@ public class FavoriteActivity extends ActionBarActivity
         setContentView(R.layout.activity_favorite);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new FavoriteFragment())
                     .commit();
         }
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -93,82 +93,4 @@ public class FavoriteActivity extends ActionBarActivity
 
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        private NewsAdapter newsAdapter;
-
-        public static final int UPDATE_INTERVAL = 1000 * 60;
-
-        private static final String ARG_SECTION_NUMBER = "Favorite";
-
-        public PlaceholderFragment() {
-        }
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_favorite, container, false);
-
-            newsAdapter = new NewsAdapter(getActivity(), TransientDataFetcher.getNews());
-
-            ListView newsListView = (ListView) rootView.findViewById(R.id.favorite_news_list);
-
-            newsListView.setAdapter(newsAdapter);
-
-            handler.postDelayed(updaterFunction, UPDATE_INTERVAL);
-
-            return rootView;
-        }
-        final Handler handler = new Handler();
-        Runnable updaterFunction = new Runnable() {
-
-            @Override
-            public void run() {
-                try{
-                    List<Transient> oldData = TransientDataFetcher.getData();
-                    List<Transient> newData = TransientDataFetcher.getUpdatedDataNotCached();
-
-                    for(int i=0; i<oldData.size(); i++){
-                        Transient oldDataItem = oldData.get(i);
-
-                        for(int j=0; j<newData.size(); j++){
-                            Transient newDataItem = newData.get(j);
-                            if(oldDataItem.getName().equals(newDataItem.getName())){
-                                for(Field field : newDataItem.getClass().getDeclaredFields()){
-                                    if(!field.get(oldDataItem).equals(field.get(newDataItem)) && !field.getName().equals("followed")){
-                                        NewsItem newsItem = new NewsItem();
-                                        newsItem.setName(newDataItem.getName());
-                                        newsItem.setChangedAttributeName(field.getName().toUpperCase());
-                                        newsItem.setNewValue(field.get(newDataItem).toString());
-                                        TransientDataFetcher.getNews().add(newsItem);
-                                        newsAdapter.notifyDataSetChanged();
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-
-                    handler.postDelayed(this, 1000);
-                }
-                catch (Exception e) {
-                    // TODO: handle exception
-                }
-                finally{
-                    //also call the same runnable
-                    handler.postDelayed(this, 1000);
-                }
-            }
-        };
-    }
 }
