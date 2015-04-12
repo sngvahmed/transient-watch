@@ -14,10 +14,12 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.lang.reflect.Method;
 import java.security.Provider;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.DetailsController.DetailsActivity;
+import transientwatch.com.transientwatch.Model.NewsItem;
 import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
 import transientwatch.com.transientwatch.Controller.*;
@@ -48,19 +50,14 @@ public class MainControllerFragment extends Fragment {
     }
 
     public void onClickListnerInit(){
-        final Context con = getActivity();
+
         transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Button follow = (Button) view.findViewById(R.id.follow);
-                follow.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                final Transient selectedItem = TransientDataFetcher.getData().get(position);
 
-                    }
-                });
                 Intent intent = new Intent(getActivity() , DetailsActivity.class);
-                intent.putExtra("TransientItem" , transientData.get(position));
+                intent.putExtra("TransientItem" , selectedItem);
                 startActivity(intent);
             }
         });

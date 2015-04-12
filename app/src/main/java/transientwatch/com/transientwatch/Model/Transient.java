@@ -5,7 +5,8 @@ import android.app.ListActivity;
 import java.io.Serializable;
 
 public class Transient implements Serializable {
-	private boolean follower;
+
+    private boolean followed;
 	private String name;
     private String type;
     private String right_ascention;
@@ -111,6 +112,13 @@ public class Transient implements Serializable {
         this.type = type;
     }
 
+    public boolean isFollowed() {
+        return followed;
+    }
+
+    public void setFollowed(boolean followed) {
+        this.followed = followed;
+    }
 	
 }
 

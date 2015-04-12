@@ -1,5 +1,6 @@
 package transientwatch.com.transientwatch.Controller.FavoriteController;
 
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -10,9 +11,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.os.Build;
+import android.widget.ListView;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
+import transientwatch.com.transientwatch.Model.NewsItem;
+import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
+import transientwatch.com.transientwatch.Service.NewsAdapter;
+import transientwatch.com.transientwatch.Service.TransientDataFetcher;
 
 
 public class FavoriteActivity extends ActionBarActivity
