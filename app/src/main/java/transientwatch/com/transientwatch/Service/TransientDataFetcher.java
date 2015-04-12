@@ -17,7 +17,7 @@ public class TransientDataFetcher {
 
     private static List<NewsItem> newsData;
 
-    public static List<Transient> getData(){
+    public static synchronized List<Transient> getData(){
         try{
             if(data == null){
                 data = parser.getData();

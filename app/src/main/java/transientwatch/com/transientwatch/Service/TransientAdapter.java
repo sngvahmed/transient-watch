@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.lang.reflect.Method;
+import java.util.Iterator;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Model.NewsItem;
@@ -83,17 +84,32 @@ public class TransientAdapter extends BaseAdapter {
 
                 System.out.println("Item Clicked");
 
-                if(selectedItem.isFollowed()){
+                if (selectedItem.isFollowed()) {
                     selectedItem.setFollowed(false);
                     ((Button) v).setText("Follow");
-                }
-                else {
+                    String var = selectedItem.getName();
+                    System.out.println("sngv :: size :: " + Integer.toString(TransientDataFetcher.getNews().size()));
+                    Iterator<NewsItem> iterator = TransientDataFetcher.getNews().iterator();
+
+                    while(iterator.hasNext()) {
+                        NewsItem item = iterator.next();
+                        System.out.println("sngv :: var :: " + var);
+                        System.out.println("sngv :: item :: " + item.getName());
+                        if(item.getName().equals(var)){
+                            System.out.println("sngv :: found");
+                            //TransientDataFetcher.getNews().remove(item);
+                            iterator.remove();
+                            System.out.println("sngv :: done remove");
+                        }
+                    }
+
+                } else {
                     selectedItem.setFollowed(true);
                     ((Button) v).setText("Unfollow");
                     Transient newDataItem = selectedItem;
-                    try{
-                        for(Method method : newDataItem.getClass().getDeclaredMethods()){
-                            if(method.getName().startsWith("get")) {
+                    try {
+                        for (Method method : newDataItem.getClass().getDeclaredMethods()) {
+                            if (method.getName().startsWith("get")) {
                                 Object value = method.invoke(newDataItem);
                                 String valueStr = value == null ? "" : value.toString();
 
@@ -107,8 +123,7 @@ public class TransientAdapter extends BaseAdapter {
                                 }
                             }
                         }
-                    }
-                    catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                 }
