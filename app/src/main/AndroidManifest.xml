@@ -30,6 +30,13 @@
             android:label="@string/title_activity_favorite"
             android:parentActivityName=".Controller.MainController.MainActivity">
         </activity>
+        <activity android:name=".Controller.Notification.NotificationAlert"
+            android:label="Details of notification"
+            android:parentActivityName=".Controller.MainController.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Controller.MainController.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

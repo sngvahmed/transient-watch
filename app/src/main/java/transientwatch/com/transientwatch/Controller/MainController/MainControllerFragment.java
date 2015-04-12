@@ -1,9 +1,12 @@
 package transientwatch.com.transientwatch.Controller.MainController;
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +20,9 @@ import android.widget.Toast;
 import java.lang.reflect.Method;
 import java.security.Provider;
 import java.util.List;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.app.NotificationCompat.WearableExtender;
 
 import transientwatch.com.transientwatch.Controller.DetailsController.DetailsActivity;
 import transientwatch.com.transientwatch.Model.NewsItem;
@@ -84,7 +90,6 @@ public class MainControllerFragment extends Fragment {
                         public void run() {
                             if(transientItemListView != null) {
                                 transientAdapter = new TransientAdapter(getActivity() , transientData);
-                                Toast.makeText(getActivity() , Integer.toString(transientData.size()) , Toast.LENGTH_LONG).show();
                                 transientItemListView.setAdapter(transientAdapter);
                             }
                         }
@@ -93,13 +98,11 @@ public class MainControllerFragment extends Fragment {
 
                 } catch (Exception e) {
                     System.out.println("Exception " + e.toString());
-                    //e.printStackTrace();
                 }
             }
         }).start();
 
         onClickListnerInit();
-
         return rootView;
     }
 
