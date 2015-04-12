@@ -63,8 +63,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:paddingTop="18dp"
-            android:orientation="horizontal" >
+            android:orientation="vertical"
+            android:paddingTop="20dp">
 
             <Button
                 android:background="@drawable/follow_buttom"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/follow"
                 android:layout_alignParentRight="true"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
                 android:text="Follow"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
@@ -80,6 +80,7 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:gravity="center"
+
                 />
         </LinearLayout>
         </LinearLayout>
