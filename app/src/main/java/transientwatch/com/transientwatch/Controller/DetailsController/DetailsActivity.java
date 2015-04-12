@@ -22,6 +22,7 @@ public class DetailsActivity extends ActionBarActivity {
     }
 
     private void mapDataToView() {
+
         ((TextView)findViewById(R.id.item_name)).setText(trans.getName());
         ((TextView)findViewById(R.id.ra)).setText(trans.getRight_ascention());
         ((TextView)findViewById(R.id.dec)).setText(trans.getDeclination());

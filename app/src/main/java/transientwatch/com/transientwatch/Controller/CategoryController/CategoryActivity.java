@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
 import transientwatch.com.transientwatch.R;
@@ -29,7 +28,7 @@ public class CategoryActivity extends ActionBarActivity
         setContentView(R.layout.activity_category);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new CategoryFragment())
                     .commit();
         }
 
@@ -55,7 +54,7 @@ public class CategoryActivity extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, CategoryFragment.newInstance(position + 1))
                 .commit();
     }
 
@@ -92,26 +91,5 @@ public class CategoryActivity extends ActionBarActivity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
 
-        private static final String ARG_SECTION_NUMBER = "Category";
-
-        public PlaceholderFragment() {
-        }
-
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-        
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_category, container, false);
-            return rootView;
-        }
-    }
 }

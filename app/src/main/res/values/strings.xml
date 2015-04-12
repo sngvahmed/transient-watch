@@ -4,6 +4,7 @@
     <string name="Nav_Home">Home</string>
     <string name="Nav_Category">Category</string>
     <string name="Nav_Search">Search</string>
+    <string name="Nav_Favorite">Favorite</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,5 +19,6 @@
     <string name="transient_dec">transient dec</string>
     <string name="transient_op">transient op</string>
     <string name="title_activity_details">DetailsActivity</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
 
 </resources>

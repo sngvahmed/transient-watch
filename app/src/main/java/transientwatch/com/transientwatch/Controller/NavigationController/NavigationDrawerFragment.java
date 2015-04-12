@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import transientwatch.com.transientwatch.Controller.CategoryController.CategoryActivity;
+import transientwatch.com.transientwatch.Controller.FavoriteController.FavoriteActivity;
 import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.R;
 
@@ -108,6 +109,7 @@ public class NavigationDrawerFragment extends Fragment {
                 new String[]{
                         getString(R.string.Nav_Search),
                         getString(R.string.Nav_Home),
+                        "Favorite",
                         getString(R.string.Nav_Category),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
@@ -203,7 +205,11 @@ public class NavigationDrawerFragment extends Fragment {
             {
                 Intent intent = new Intent(getActivity() , SearchActivity.class);
                 getActivity().startActivity(intent);
-            }else if(mCurrentSelectedPosition == 2) // category
+            }else if(mCurrentSelectedPosition == 2) // Favorite
+            {
+                Intent intent = new Intent(getActivity() , FavoriteActivity.class);
+                getActivity().startActivity(intent);
+            }else if(mCurrentSelectedPosition == 3) // Category
             {
                 Intent intent = new Intent(getActivity() , CategoryActivity.class);
                 getActivity().startActivity(intent);

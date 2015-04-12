@@ -3,7 +3,7 @@ package transientwatch.com.transientwatch.Model;
 import java.io.Serializable;
 
 public class Transient implements Serializable {
-		
+	private boolean follower;
 	private String name;
     private String type;
     private String right_ascention;

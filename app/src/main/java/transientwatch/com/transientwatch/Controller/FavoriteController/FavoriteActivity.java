@@ -1,18 +1,22 @@
-package transientwatch.com.transientwatch.Controller.SearchController;
+package transientwatch.com.transientwatch.Controller.FavoriteController;
 
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
 import transientwatch.com.transientwatch.R;
 
 
-public class SearchActivity extends ActionBarActivity
+public class FavoriteActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks{
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
@@ -21,9 +25,10 @@ public class SearchActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_favorite);
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.container, new SearchFragment())
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -33,16 +38,7 @@ public class SearchActivity extends ActionBarActivity
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.search_layout));
-    }
-
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, SearchFragment.newInstance(position + 1))
-                .commit();
+                (DrawerLayout) findViewById(R.id.favorite_layout));
     }
 
     public void restoreActionBar() {
@@ -55,7 +51,7 @@ public class SearchActivity extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search, menu);
+        getMenuInflater().inflate(R.menu.menu_favorite, menu);
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
@@ -82,6 +78,33 @@ public class SearchActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
-     */}
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "Favorite";
+
+        public PlaceholderFragment() {
+        }
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_favorite, container, false);
+            return rootView;
+        }
+    }
+}
