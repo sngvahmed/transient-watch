@@ -14,6 +14,7 @@
         android:layout_height="150dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp">
+
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="match_parent"
@@ -82,152 +83,173 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Maxi   "
-            android:textSize="30dp"
-            android:textColor="#fff"
-            />
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Maxi data"
-            android:id="@+id/maxi_data"
-            android:textSize="10dp"
-            android:textColor="#fff"
-            />
-        </LinearLayout>
-
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/maxi_change_prob"
-        android:text="maxi change prob :"
-        android:textSize="20dp"
-        android:textColor="#fff"
-    />
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/maxi_avg"
-        android:text="maxi average :"
-        android:textSize="20dp"
-        android:textColor="#fff"
-    />
 
 
     <LinearLayout
-        android:paddingTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Swift   "
-            android:textSize="30dp"
-            android:textColor="#fff"
-            />
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="swift_data"
-            android:id="@+id/swift_data"
-            android:textSize="10dp"
-            android:textColor="#fff"
-            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Maxi   "
+                        android:textSize="30dp"
+                        android:textColor="#fff"
+                        />
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Maxi data"
+                        android:id="@+id/maxi_data"
+                        android:textSize="10dp"
+                        android:textColor="#fff"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/maxi_change_prob"
+                    android:text="maxi change prob :"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/maxi_avg"
+                    android:text="maxi average :"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+
+
+                <LinearLayout
+                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Swift   "
+                        android:textSize="30dp"
+                        android:textColor="#fff"
+                        />
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="swift_data"
+                        android:id="@+id/swift_data"
+                        android:textSize="10dp"
+                        android:textColor="#fff"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/swift_change_prob"
+                    android:text="swift change prob: "
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/swift_avg"
+                    android:text="swift average :"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+
+
+
+                <LinearLayout
+                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Fermi   "
+                        android:textSize="30dp"
+                        android:textColor="#fff"
+                        />
+                    <TextView
+                        android:textAlignment="gravity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="fermi_data"
+                        android:id="@+id/fermi_data"
+                        android:textSize="10dp"
+                        android:textColor="#fff"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/fermi_change_prob"
+                    android:text="swift change prob: "
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+                <TextView
+                    android:textAlignment="gravity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/fermi_avg"
+                    android:text="swift average :"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/swift_change_prob"
-        android:text="swift change prob: "
-        android:textSize="20dp"
-        android:textColor="#fff"
-        />
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/swift_avg"
-        android:text="swift average :"
-        android:textSize="20dp"
-        android:textColor="#fff"
-        />
 
-
-
-    <LinearLayout
-        android:paddingTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Fermi   "
-            android:textSize="30dp"
-            android:textColor="#fff"
-            />
-        <TextView
-            android:textAlignment="gravity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="fermi_data"
-            android:id="@+id/fermi_data"
-            android:textSize="10dp"
-            android:textColor="#fff"
-            />
-    </LinearLayout>
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/fermi_change_prob"
-        android:text="swift change prob: "
-        android:textSize="20dp"
-        android:textColor="#fff"
-        />
-    <TextView
-        android:textAlignment="gravity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:id="@+id/fermi_avg"
-        android:text="swift average :"
-        android:textSize="20dp"
-        android:textColor="#fff"
-        />
 
 
 </LinearLayout>
