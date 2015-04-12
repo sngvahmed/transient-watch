@@ -25,7 +25,7 @@ public class FavoriteFragment extends Fragment {
 
     private NewsAdapter newsAdapter;
 
-    public static final int UPDATE_INTERVAL = 1000 * 60;
+    public static final int UPDATE_INTERVAL = 1000 * 60 * 10;
 
     private static final String ARG_SECTION_NUMBER = "Favorite";
 
