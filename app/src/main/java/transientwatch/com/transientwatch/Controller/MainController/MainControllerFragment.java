@@ -71,6 +71,8 @@ public class MainControllerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
+        TransientDataFetcher.cacheFolder = getActivity().getCacheDir();
+
         transientItemListView = (ListView) rootView.findViewById(R.id.transient_item_list);
         new Thread(new Runnable() {
             @Override
