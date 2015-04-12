@@ -30,7 +30,6 @@ public class MainControllerFragment extends Fragment {
     public static ListView transientItemListView;
     public static TransientAdapter transientAdapter;
     public static List<Transient> transientData;
-    public static List<Transient> CustometransientData;
 
 
     public static MainControllerFragment newInstance(int sectionNumber) {
@@ -43,7 +42,7 @@ public class MainControllerFragment extends Fragment {
 
 
     public void updateListCustome(List<Transient> list) {
-        CustometransientData = list;
+        List<Transient> CustometransientData = list;
         transientAdapter = new TransientAdapter(getActivity() , CustometransientData);
         transientItemListView.setAdapter(transientAdapter);
     }
@@ -57,7 +56,7 @@ public class MainControllerFragment extends Fragment {
                 follow.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        
+
                     }
                 });
                 Intent intent = new Intent(getActivity() , DetailsActivity.class);
@@ -76,26 +75,19 @@ public class MainControllerFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         transientItemListView = (ListView) rootView.findViewById(R.id.transient_item_list);
-        transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println("Clicked");
-            }
-        });
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     transientData = TransientDataFetcher.getData();
-
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             if(transientItemListView != null) {
                                 transientAdapter = new TransientAdapter(getActivity() , transientData);
+                                Toast.makeText(getActivity() , Integer.toString(transientData.size()) , Toast.LENGTH_LONG).show();
                                 transientItemListView.setAdapter(transientAdapter);
                             }
-
                         }
                     });
                     System.out.println("Finished loading " + transientItemListView == null);
