@@ -17,9 +17,13 @@ public class TransientDataFetcher {
 
     private static List<NewsItem> newsData;
 
-    public static List<Transient> getData() throws Exception{
-        if(data == null){
-            data = parser.getData();
+    public static List<Transient> getData(){
+        try{
+            if(data == null){
+                data = parser.getData();
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
         return data;
     }

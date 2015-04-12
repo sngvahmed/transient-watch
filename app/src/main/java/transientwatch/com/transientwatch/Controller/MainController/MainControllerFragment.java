@@ -50,47 +50,12 @@ public class MainControllerFragment extends Fragment {
     }
 
     public void onClickListnerInit(){
+
         transientItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                System.out.println("WWWWWTF");
-                final Transient selectedItem = transientData.get(position);
-                Button follow = (Button) view.findViewById(R.id.follow);
-                follow.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        System.out.println("WTF");
-                        if(selectedItem.isFollowed()){
-                            selectedItem.setFollowed(false);
-                            ((Button) v).setText("Follow");
-                        }
-                        else {
-                            selectedItem.setFollowed(true);
-                            ((Button) v).setText("Unfollow");
-                            Transient newDataItem = transientData.get(position);
-                            try{
-                                for(Method method : newDataItem.getClass().getDeclaredMethods()){
-                                    if(method.getName().startsWith("get")) {
-                                        Object value = method.invoke(newDataItem);
-                                        String valueStr = value == null ? "" : value.toString();
+                final Transient selectedItem = TransientDataFetcher.getData().get(position);
 
-                                        if (value != null && valueStr.length() > 0 && !valueStr.equals("NO DATA") && !method.getName().equals("getFollowed")) {
-                                            method.setAccessible(true);
-                                            NewsItem newsItem = new NewsItem();
-                                            newsItem.setName(newDataItem.getName().replace("get", ""));
-                                            newsItem.setChangedAttributeName(method.getName().toUpperCase());
-                                            newsItem.setNewValue(value != null ? value.toString() : "");
-                                            TransientDataFetcher.getNews().add(newsItem);
-                                        }
-                                    }
-                                }
-                            }
-                            catch (Exception ex){
-                                ex.printStackTrace();
-                            }
-                        };
-                    }
-                });
                 Intent intent = new Intent(getActivity() , DetailsActivity.class);
                 intent.putExtra("TransientItem" , selectedItem);
                 startActivity(intent);
