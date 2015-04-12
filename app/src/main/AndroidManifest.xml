@@ -21,18 +21,6 @@
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".Controller.SearchController.SearchActivity"
-            android:label="@string/title_activity_search"
-            android:parentActivityName=".Controller.MainController.MainActivity" >
-        </activity>
-        <activity
-            android:screenOrientation="portrait"
-            android:name=".Controller.CategoryController.CategoryActivity"
-            android:label="@string/title_activity_category"
-            android:parentActivityName=".Controller.MainController.MainActivity" >
-        </activity>
-        <activity
-            android:screenOrientation="portrait"
             android:name=".Controller.DetailsController.DetailsActivity"
             android:label="@string/title_activity_details" >
         </activity>

@@ -1,35 +1,25 @@
 package transientwatch.com.transientwatch.Controller.MainController;
 
-import android.annotation.TargetApi;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 
-import android.app.SearchManager;
-import android.view.View;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import transientwatch.com.transientwatch.Controller.FavoriteController.FavoriteActivity;
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
-import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
-import transientwatch.com.transientwatch.Service.TransientAdapter;
 
 
 public class MainActivity extends ActionBarActivity
