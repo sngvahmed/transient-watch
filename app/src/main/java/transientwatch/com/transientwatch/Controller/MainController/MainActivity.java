@@ -2,6 +2,7 @@ package transientwatch.com.transientwatch.Controller.MainController;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import transientwatch.com.transientwatch.Controller.NavigationController.NavigationDrawerFragment;
+import transientwatch.com.transientwatch.HelpActivity;
 import transientwatch.com.transientwatch.Model.Transient;
 import transientwatch.com.transientwatch.R;
 
@@ -129,8 +131,9 @@ public class MainActivity extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }else {
-
+        }else if(id == R.id.help){
+            Intent intent = new Intent(this , HelpActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

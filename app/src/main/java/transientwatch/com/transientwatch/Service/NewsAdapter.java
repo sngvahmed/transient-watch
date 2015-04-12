@@ -41,13 +41,11 @@ public class NewsAdapter extends ArrayAdapter {
             convertView = inflater.inflate(R.layout.news_item, null);
 
         TextView name = (TextView) convertView.findViewById(R.id.news_item_name);
-        TextView attributeName = (TextView) convertView.findViewById(R.id.news_item_attribute_name);
-        TextView attributeValue = (TextView) convertView.findViewById(R.id.news_item_attribute_value);
+        TextView attributeName = (TextView) convertView.findViewById(R.id.news_item_attribute_msg);
 
         NewsItem newsItem = newsItems.get(position);
-        name.setText(newsItem.getName());
-        attributeName.setText(newsItem.getChangedAttributeName());
-        attributeValue.setText(newsItem.getNewValue());
+        name.setText(newsItem.getName() + ": ");
+        attributeName.setText("My " + newsItem.getChangedAttributeName() + " is now " + newsItem.getNewValue());
 
         return convertView;
     }
