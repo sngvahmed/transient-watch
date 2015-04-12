@@ -25,34 +25,37 @@
                     android:text="@string/transient_name"
                     android:id="@+id/transient_name"
                     android:textColor="#FFFFFF"
+                    android:textSize="20dp"
                     />
 
                 <TextView
-                    android:paddingLeft="10dp"
+                    
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_ra"
                     android:id="@+id/transient_ra"
                     android:textColor="#FFFFFF"
+                    android:textSize="15dp"
                 />
                 <TextView
-                    android:paddingLeft="10dp"
+                    
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_dec"
                     android:id="@+id/transient_dec"
                     android:textColor="#FFFFFF"
+                    android:textSize="15dp"
                 />
                 <TextView
-                    android:paddingLeft="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/transient_op"
                     android:id="@+id/transient_op"
                     android:textColor="#FFFFFF"
+                    android:textSize="15dp"
                     />
         </LinearLayout>
 
@@ -60,8 +63,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:paddingLeft="10dp"
-            android:paddingTop="12dp"
+            android:paddingTop="18dp"
             android:orientation="horizontal" >
 
             <Button

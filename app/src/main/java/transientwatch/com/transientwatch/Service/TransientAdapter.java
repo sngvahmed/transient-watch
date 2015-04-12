@@ -72,9 +72,9 @@ public class TransientAdapter extends BaseAdapter {
 
         Transient aTransient = aTransients.get(position);
         name.setText(aTransient.getName());
-        ra.setText(aTransient.getRight_ascention());
-        dec.setText(aTransient.getDeclination());
-        op.setText(aTransient.getOrbital_period());
+        ra.setText("Right Ascention: " + aTransient.getRight_ascention());
+        dec.setText("Declination: " + aTransient.getDeclination());
+        op.setText("Orbital Period: " + aTransient.getOrbital_period());
 
         if(aTransient.isFollowed()){
             follow.setText("Unfollow");
