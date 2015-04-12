@@ -28,6 +28,7 @@
                     />
 
                 <TextView
+                    android:paddingLeft="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -36,6 +37,7 @@
                     android:textColor="#FFFFFF"
                 />
                 <TextView
+                    android:paddingLeft="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -44,6 +46,7 @@
                     android:textColor="#FFFFFF"
                 />
                 <TextView
+                    android:paddingLeft="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -57,22 +60,24 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:padding="25dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="12dp"
             android:orientation="horizontal" >
 
             <Button
                 android:background="@drawable/follow_buttom"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/follow"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
                 android:text="Follow"
-                android:textAlignment="gravity"
+                android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textStyle="normal"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
+                android:gravity="center"
                 />
         </LinearLayout>
         </LinearLayout>

@@ -22,40 +22,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import transientwatch.com.transientwatch.Controller.CategoryController.CategoryActivity;
 import transientwatch.com.transientwatch.Controller.FavoriteController.FavoriteActivity;
 import transientwatch.com.transientwatch.Controller.MainController.MainActivity;
-import transientwatch.com.transientwatch.Controller.SearchController.SearchActivity;
 import transientwatch.com.transientwatch.R;
 
-/**
- * Fragment used for managing interactions for and presentation of a navigation drawer.
- * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
- * design guidelines</a> for a complete explanation of the behaviors implemented here.
- */
 public class NavigationDrawerFragment extends Fragment {
-
-    /**
-     * Remember the position of the selected item.
-     */
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
 
-    /**
-     * Per the design guidelines, you should show the drawer on launch until the user manually
-     * expands it. This shared preference tracks this.
-     */
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
-
-    /**
-     * A pointer to the current callbacks instance (the Activity).
-     */
     private NavigationDrawerCallbacks mCallbacks;
-
-    /**
-     * Helper component that ties the action bar to the navigation drawer.
-     */
     private ActionBarDrawerToggle mDrawerToggle;
-
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
     private View mFragmentContainerView;
@@ -108,10 +84,8 @@ public class NavigationDrawerFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
                 new String[]{
-                        getString(R.string.Nav_Search),
                         getString(R.string.Nav_Home),
                         "Favorite",
-                        getString(R.string.Nav_Category),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
@@ -199,20 +173,13 @@ public class NavigationDrawerFragment extends Fragment {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
-            if(mCurrentSelectedPosition == 0){ // search select
-                Intent intent = new Intent(getActivity() , SearchActivity.class);
-                getActivity().startActivity(intent);
-            }else if (mCurrentSelectedPosition == 1) //home
+            if (mCurrentSelectedPosition == 0) //home
             {
                 Intent intent = new Intent(getActivity() , MainActivity.class);
                 getActivity().startActivity(intent);
-            }else if(mCurrentSelectedPosition == 2) // Favorite
+            }else if(mCurrentSelectedPosition == 1) // Favorite
             {
                 Intent intent = new Intent(getActivity() , FavoriteActivity.class);
-                getActivity().startActivity(intent);
-            }else if(mCurrentSelectedPosition == 3) // Category
-            {
-                Intent intent = new Intent(getActivity() , CategoryActivity.class);
                 getActivity().startActivity(intent);
             }
         }
