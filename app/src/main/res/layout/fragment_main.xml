@@ -8,14 +8,6 @@
     android:orientation="vertical"
     android:background="@drawable/background1">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:textSize="50dp"
-        android:textColor="@color/abc_primary_text_disable_only_material_dark"/>
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

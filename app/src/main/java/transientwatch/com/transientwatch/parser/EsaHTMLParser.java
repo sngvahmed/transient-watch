@@ -41,10 +41,10 @@ public class EsaHTMLParser implements Parser {
 			String link = attributes.get(0).childNode(0).attr("href");
 //			System.out.println("internal link = " + link);
 
-			Elements name_page_table = fetch_html_table(link, NAME_TABLE_NUMBER);
-			Element tuple2 = name_page_table.get(0);
-			Elements name_row = tuple2.select("td");
-			String transient_type = name_row.get(0).text();
+//			Elements name_page_table = fetch_html_table(link, NAME_TABLE_NUMBER);
+//			Element tuple2 = name_page_table.get(0);
+//			Elements name_row = tuple2.select("td");
+//			String transient_type = name_row.get(0).text();
 //			System.out.println("Internal Result = " + transient_type);
 			/**
 			 * Object for every row representing a transient
@@ -55,7 +55,7 @@ public class EsaHTMLParser implements Parser {
 			 * Transient attributes
 			 */
 			obj.setName(attributes.get(0).text());
-            obj.setType(transient_type);
+//            obj.setType(transient_type);
 			System.out.println(obj.getName());
 			obj.setRight_ascention(attributes.get(1).text());
 			obj.setDeclination(attributes.get(2).text());
